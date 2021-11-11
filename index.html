@@ -10,21 +10,19 @@
     <div id="root"></div>
     <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
     <script src="http://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
-    <script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
       const rootElement = document.getElementById("root");
-      const element = React.createElement(
-        "div",
-        {
-          className: "container",
-        },
-
-        React.createElement(
-          "h1",
-          {
-            className: "hello-react-text",
-          },
-          "Hello, React !"
-        )
+      const name = "judie";
+      const className = "container";
+      const props = {
+        className: "container-test",
+        onClick: () => console.log("Hello, everyone!"),
+      };
+      const element = (
+        <div className={className} {...props}>
+          <h1 className="hello-react-text">Welcome {name} !</h1>
+        </div>
       );
 
       ReactDOM.render(element, rootElement);
