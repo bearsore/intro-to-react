@@ -12,14 +12,22 @@
     <script src="http://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
     <script>
       const rootElement = document.getElementById("root");
-      const headingElement = React.createElement(
-        "h1",
+      const element = React.createElement(
+        "div",
         {
-          className: "hello-react-text",
+          className: "container",
         },
-        "Hello, React !"
+
+        React.createElement(
+          "h1",
+          {
+            className: "hello-react-text",
+          },
+          "Hello, React !"
+        )
       );
-      ReactDOM.render(headingElement, rootElement);
+
+      ReactDOM.render(element, rootElement);
     </script>
   </body>
 </html>
